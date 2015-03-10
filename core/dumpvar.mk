@@ -116,7 +116,7 @@ $(info   SOKP_O3=false)
 endif
 ifeq (true,$(SOKP_GRAPHITE))
 $(info   SOKP_GRAPHITE=$(SOKP_GRAPHITE))
-$(info   GRAPHITE_FLAGS=$(GRAPHITE_FLAGS))
+#$(info   GRAPHITE_FLAGS=$(GRAPHITE_FLAGS))
 else
 $(info   GRAPHITE_OPTIMIZATIONS=false)
 endif
