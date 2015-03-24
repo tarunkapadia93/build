@@ -886,6 +886,7 @@ else
     PRODUCT_EXTRA_RECOVERY_KEYS += \
         build/target/product/security/sokp \
         build/target/product/security/sokp-devkey \
+        build/target/product/security/bacon
 endif
 
 # Generate a file containing the keys that will be read by the
