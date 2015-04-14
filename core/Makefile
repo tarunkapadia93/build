@@ -1705,7 +1705,11 @@ bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SOKP_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(SOKP_TARGET_PACKAGE) > $(SOKP_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_CYN}"Package Complete: $(SOKP_TARGET_PACKAGE)"${CL_RST}
-
+ifeq ($(USE_PREBUILT_CHROMIUM),1)
+ifneq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+	@echo "Running Chromium prebuilt setup script..."
+	$(hide) . $(TOPDIR)vendor/sokp/utils/chromium_prebuilt.sh $(TOP)
+endif
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
 endif    # TARGET_DEVICE != generic*
