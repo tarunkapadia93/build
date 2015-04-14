@@ -184,12 +184,6 @@ ifneq ($(USE_CCACHE),)
   # Check that the executable is here.
   ccache := $(strip $(wildcard $(ccache)))
 endif
-<<<<<<< HEAD
-ifneq ($(TARGET_TC_KERNEL),)
-  ifeq ($(HOST_OS),darwin)
-    KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ANDROID_BUILD_TOP)/prebuilts/gcc/darwin-x86/arm/arm-eabi-$(TARGET_TC_KERNEL)/bin/arm-eabi-"
-=======
-
 ifneq ($(TARGET_KERNEL_XPRE),true)
   ifneq ($(TARGET_TC_KERNEL),)
     ifeq ($(HOST_OS),darwin)
@@ -197,16 +191,12 @@ ifneq ($(TARGET_KERNEL_XPRE),true)
     else
       KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-$(TARGET_TC_KERNEL)/bin/arm-eabi-"  
     endif
->>>>>>> 8419c8e... Some enhancements to toolchain handling. Fixed missing slash in Makefile.
   else
     $(error   ----------------- KERNEL TOOLCHAIN WRONG! -------------------------)
   endif
 else
   KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ccache) $(KERNEL_TOOLCHAIN_PATH)"
 endif
-<<<<<<< HEAD
-=======
-
 $(info   -------------------------------------------------------)
 $(info   ----------------- KERNEL INFO -------------------------)
 $(info   -------------------------------------------------------)
@@ -215,8 +205,6 @@ $(info   KERNEL_TOOLCHAIN=$(KERNEL_TOOLCHAIN))
 $(info   KERNEL_TOOLCHAIN_PATH=$(KERNEL_TOOLCHAIN_PATH))
 $(info   KERNEL_CROSS_COMPILE=$(KERNEL_CROSS_COMPILE))
 $(info   -------------------------------------------------------)
-
->>>>>>> 8419c8e... Some enhancements to toolchain handling. Fixed missing slash in Makefile.
 ccache =
 
 define mv-modules
