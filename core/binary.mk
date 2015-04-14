@@ -122,20 +122,19 @@ endif
 endif
 
 # Supported OS's and ARCH's only
+ifeq ($(strip $(SOKP_GRAPHITE)),true)
 ifeq (linux,$(HOST_OS))
 ifeq (1,$(words $(filter arm arm64,$(TARGET_ARCH))))
 # Do not use graphite on host modules or the clang compiler
 ifndef LOCAL_IS_HOST_MODULE
 ifndef LOCAL_CLANG
-ifeq ($(SOKP_GRAPHITE),true)
 include $(BUILD_SYSTEM)/graphite.mk
 endif
 endif
 endif
 endif
 endif
-
-ifeq ($(SOKP_PIPE),true)
+ifeq ($(strip $(SOKP_PIPE)),true)
 include $(BUILD_SYSTEM)/pipe.mk
 endif
 
