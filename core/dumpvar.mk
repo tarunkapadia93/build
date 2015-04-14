@@ -151,7 +151,6 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.sm.kernel=$(SM_KERNEL_VERSION) \
     ro.sm.flags=$(GCC_OPTIMIZATION_LEVELS)
 endif
-
->>>>>>> 4313dca... Enhanced variables output display to include toolchain values and pass them on to build.prop file.
 $(info ============================================)
+endif
 endif
