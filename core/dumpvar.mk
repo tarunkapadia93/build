@@ -120,18 +120,20 @@ $(info   SOKP_GRAPHITE=$(SOKP_GRAPHITE))
 else
 $(info   GRAPHITE_OPTIMIZATIONS=false)
 endif
-ifdef STRICT_ALIASING
-$(info   STRICT_ALIASING=$(SOKP_STRICT))
+ifdef SOKP_STRICT
+$(info   SOKP_STRICT=$(SOKP_STRICT))
 else
-$(info   STRICT_ALIASING=false)
+$(info   SOKP_STRICT=false)
 endif
-ifdef KRAIT_TUNINGS
-$(info   KRAIT_TUNINGS=$(SOKP_KRAIT))
+ifdef SOKP_KRAIT
+$(info   SOKP_KRAIT=$(SOKP_KRAIT))
 else
-ifdef USE_PIPE
-$(info   USE_PIPE=$(SOKP_PIPE))
+$(info   SOKP_KRAIT=false)
+endif
+ifdef SOKP_PIPE
+$(info   SOKP_PIPE=$(SOKP_PIPE))
 else
-$(info   USE_PIPE=false)
+$(info   SOKP_PIPE=false)
 endif
 $(info   HOST_ARCH=$(HOST_ARCH))
 $(info   HOST_OS=$(HOST_OS))
